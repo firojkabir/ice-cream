@@ -4,12 +4,23 @@ import IceCream from '../../components/iceCream/iceCream'
 import Builder from '../../components/Builder/Builder'
 
 class IceCreamBuilder extends Component {
-    state = {}
+    state = {
+        items: {
+            vanilla: 45,
+            chocolate: 50,
+            lemon: 35,
+            orange: 55,
+            strawberry: 60
+        },
+        scoops: [],
+        totalPrice: 0
+    }
 
     render() {
+        const { items } = this.state
         return (
             <div className={['container', classes.container].join(' ')}>
-                <IceCream />
+                <IceCream items={items} />
                 <Builder />
             </div>
         )
